@@ -2,9 +2,9 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import storage from 'redux-persist/lib/storage';
-import userReducer from './userSlice';
-import customization from './customizationReducer';
+
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist/es/constants';
+import rootReducer from './reducer'
 
 const persistConfig = {
   key: 'root',
@@ -17,10 +17,7 @@ const store = configureStore({
   //     cart: cartReducer,
   //     user: userReducer
   // }
-  reducer: persistReducer(persistConfig, combineReducers({
-    user: userReducer,
-    customization
-  })),
+  reducer: persistReducer(persistConfig, rootReducer),
   middleware: [thunk]
   // middleware: (getDefaultMiddleware) =>
   //     getDefaultMiddleware({

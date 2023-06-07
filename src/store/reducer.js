@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 
 // reducer import
 import customizationReducer from './customizationReducer';
+import userReducer from './userSlice';
 
 // ==============================|| COMBINE REDUCER ||============================== //
 
