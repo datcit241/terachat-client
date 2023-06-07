@@ -1,14 +1,5 @@
 import axios from 'axios';
 // import {history} from '../index';
-import {store} from '../store';
-
-axios.defaults.baseURL = process.env.REACT_APP_API_URI;
-console.log(process.env.REACT_APP_API_URI);
-axios.interceptors.request.use(response => {
-  const {user} = store.getState().user;
-  if (user) response.headers.common['x-access-token'] = user.token;
-  return response;
-})
 
 // axios.interceptors.response.use(response => {
 //     const pagination = response.headers.pagination;

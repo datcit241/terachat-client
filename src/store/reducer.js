@@ -7,7 +7,8 @@ import userReducer from './userSlice';
 // ==============================|| COMBINE REDUCER ||============================== //
 
 const reducer = combineReducers({
-  customization: customizationReducer
+  customization: customizationReducer,
+  user: userReducer
 });
 
 export default reducer;
